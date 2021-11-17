@@ -39,7 +39,7 @@ public class CONTRASEÑAS {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int n1, n2, n3, n4;
+        int n1, n2, n3, n4, p1 = 0, p2 = 0, p3 = 0, p4 = 0;
         Random numAleatorio = new Random();
         char letra = letraAleatoria();
         // TODO code application logic here
@@ -49,12 +49,21 @@ public class CONTRASEÑAS {
             n3 = numAleatorio.nextInt(10);
             n4 = numAleatorio.nextInt(10);
             System.out.println(n1 + " " + n2 + " " + n3 + " " + n4 + " " + letra);
-
-        } while (!(numeroPar(n2, n3) || numeroImpar(n1, n4) 
-                || n1 != n2 || n1 != n3 || n1 != n4
-                || n2 != n1 ||  n2 != n3 ||  n2 != n4
-                || n3 != n1 || n3 != n2 || n3 != n4
-                || n4 != n1 || n4 != n2 || n4 != n3));
+            /*
+            if (n1 != n2 && n1 != n3 && n1 != n4) {
+                p1 = n1;
+            } else if (n2 != n1 && n2 != n3 && n2 != n4) {
+                p2 = n2;
+            } else if (n3 != n1 && n3 != n2 && n3 != n4) {
+                p3 = n3;
+            } else {
+                p4 = n4;
+            }
+             */
+        } while ((numeroPar(p2, p3) || numeroImpar(p1, p4))
+                && !(n1 != n2 && n1 != n3 && n1 != n4
+                && n2 != n3 && n2 != n4
+                && n3 != n4));
         System.out.println("LA ÚLTIMA CONTRASEÑA ES VÁLIDA");
     }
 
