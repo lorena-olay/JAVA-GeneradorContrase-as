@@ -50,11 +50,11 @@ public class CONTRASEÑAS {
             n4 = numAleatorio.nextInt(10);
             System.out.println(n1 + " " + n2 + " " + n3 + " " + n4 + " " + letra);
 
-        } while (numeroPar(n2, n3) || numeroImpar(n1, n4) 
+        } while (!(numeroPar(n2, n3) || numeroImpar(n1, n4) 
                 || n1 != n2 || n1 != n3 || n1 != n4
                 || n2 != n1 ||  n2 != n3 ||  n2 != n4
                 || n3 != n1 || n3 != n2 || n3 != n4
-                || n4 != n1 || n4 != n2 || n4 != n3);
+                || n4 != n1 || n4 != n2 || n4 != n3));
         System.out.println("LA ÚLTIMA CONTRASEÑA ES VÁLIDA");
     }
 
