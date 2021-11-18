@@ -12,6 +12,7 @@ import java.util.Random;
  * @author lorena
  */
 public class CONTRASEÑAS {
+
     //metodo que comprueba que la suma de los 2 numeros sea impar
     public static boolean numeroImpar(int n1, int n4) {
         int suma = n1 + n4;
@@ -19,6 +20,7 @@ public class CONTRASEÑAS {
         boolean impar = resto == 0;
         return impar;
     }
+
     //método que comprueba que se compruebe q la multiplicacion de los 2 numeros es par
     public static boolean numeroPar(int n2, int n3) {
         int multiplicacion = n2 * n3;
@@ -26,6 +28,7 @@ public class CONTRASEÑAS {
         boolean par = resultado != 0;
         return par;
     }
+
     //método que hace que salga una letra aleatoria del string metido
     public static char letraAleatoria() {
         Random random = new Random();
@@ -34,6 +37,7 @@ public class CONTRASEÑAS {
         char randomChar = letra.charAt(randomInt);
         return randomChar;
     }
+
     //método que comprueba q los 4 numeros metidos sean diferentes entre ellos
     public static boolean numerosDiferentes(int n1, int n2, int n3, int n4) {
         boolean okay = false;
@@ -63,17 +67,6 @@ public class CONTRASEÑAS {
             n3 = numAleatorio.nextInt(10);
             n4 = numAleatorio.nextInt(10);
             System.out.println(n1 + " " + n2 + " " + n3 + " " + n4 + " " + letra);
-            /*
-            if (n1 != n2 && n1 != n3 && n1 != n4) {
-                p1 = n1;
-            } else if (n2 != n1 && n2 != n3 && n2 != n4) {
-                p2 = n2;
-            } else if (n3 != n1 && n3 != n2 && n3 != n4) {
-                p3 = n3;
-            } else {
-                p4 = n4;
-            }
-             */
         } while ((numeroPar(p2, p3) || numeroImpar(p1, p4)) && numerosDiferentes(n1, n2, n3, n4));
         System.out.println("LA ÚLTIMA CONTRASEÑA ES VÁLIDA");
     }
