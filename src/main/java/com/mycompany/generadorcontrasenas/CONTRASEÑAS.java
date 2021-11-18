@@ -17,7 +17,7 @@ public class CONTRASEÑAS {
     public static boolean numeroImpar(int n1, int n4) {
         int suma = n1 + n4;
         int resto = suma % 2;
-        boolean impar = resto == 0;
+        boolean impar = resto != 0;
         return impar;
     }
 
@@ -25,7 +25,7 @@ public class CONTRASEÑAS {
     public static boolean numeroPar(int n2, int n3) {
         int multiplicacion = n2 * n3;
         int resultado = multiplicacion % 2;
-        boolean par = resultado != 0;
+        boolean par = resultado == 0;
         return par;
     }
 
@@ -67,8 +67,9 @@ public class CONTRASEÑAS {
             n3 = numAleatorio.nextInt(10);
             n4 = numAleatorio.nextInt(10);
             System.out.println(n1 + " " + n2 + " " + n3 + " " + n4 + " " + letra);
-        } while ((numeroPar(p2, p3) || numeroImpar(p1, p4)) && numerosDiferentes(n1, n2, n3, n4));
+        } while (!(numeroPar(p2, p3)) || !(numeroImpar(p1, p4))
+                && numerosDiferentes(n1, n2, n3, n4));
         System.out.println("LA ÚLTIMA CONTRASEÑA ES VÁLIDA");
     }
 
-}
+}/**/
